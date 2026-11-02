@@ -9,6 +9,16 @@ Agents for literature novelty audition based on deep agent harness and Deepseek 
 - Python 3.12
 - uv（推荐）或 pip
 
+## 脚本依赖结构
+
+config.py   ─┐
+protocol.py ─┼─→  agent.py  ─→  main.py（唯一入口）
+tools.py   ──┘
+
+config / protocol / tools：无依赖（叶子）
+agent：依赖上面三个（组装）
+main：依赖 agent + config（入口）
+
 ## 安装
 1. 克隆/拷贝本项目；
 2. 创建虚拟环境并装依赖：
