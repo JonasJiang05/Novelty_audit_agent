@@ -5,10 +5,9 @@ from langchain_core.tools import tool
 
 @tool
 def search_arxiv(query: str, max_results: int = 10) -> str:
-    """在 arXiv 搜索论文，返回标题/作者/arXiv ID/摘要。"""
-    url = "http://export.arxiv.org/api/query?" + urllib.parse.urlencode({
-        "search_query": f"all:{query}", "start": 0, "max_results": max_results,
-    })
+    """在 arXiv 搜索论文。
+    换平台：只改本函数体，保持返回 JSON 的字段不变
+    （title / authors / arxiv / abstract），agent 无需改动。"""
     data = urllib.request.urlopen(url, timeout=30).read().decode("utf-8")
     ns = {"atom": "http://www.w3.org/2005/Atom"}
     root = ET.fromstring(data)
