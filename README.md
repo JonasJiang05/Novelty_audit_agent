@@ -11,9 +11,7 @@ Agents for literature novelty audition based on deep agent harness and Deepseek 
 
 ## 脚本依赖结构
 
-config.py   ─┐
-protocol.py ─┼─→  agent.py  ─→  main.py（唯一入口）
-tools.py   ──┘
+config.py + protocol.py + tools.py  ─→ agent.py  ─→  main.py（唯一入口）
 
 config / protocol / tools：无依赖（叶子）
 agent：依赖上面三个（组装）
