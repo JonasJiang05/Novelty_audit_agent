@@ -37,6 +37,8 @@ main.py（唯一入口）
 **换平台原则**：search_arxiv 的输出字段（title/authors/arxiv/abstract）是"稳定接口"，
 只要换平台后仍返回这些字段，agent、协议、入口都不需要改。
 
+涉及的课程链接：https://datawhalechina.github.io/deepagents-in-action/
+
 ## 安装
 1. 克隆/拷贝本项目；
 2. 创建虚拟环境并装依赖：
