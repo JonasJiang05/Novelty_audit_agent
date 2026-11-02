@@ -1,5 +1,5 @@
 # Novelty_audit_agent
-Agents for literature novelty audition based on deep agent harness
+Agents for literature novelty audition based on deep agent harness and Deepseek API
 
 一个基于 DeepSeek + LangChain DeepAgents 的**文献创新度审查 agent**：
 给定一条"贡献声明（claim）"，自动检索 arXiv，判断该 claim 是否已被现有文献覆盖，
