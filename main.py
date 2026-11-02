@@ -1,8 +1,11 @@
 import os, datetime, sys
 from agent import agent
-from config import CLAIM
+from config import CLAIM, KNOWN_LITERATURE
 
-PROMPT = f"审这条 claim：'{CLAIM}'。用 search_arxiv 检索 DRO/redundant constraints 相关文献，按协议输出。"
+lit_text = "\n".join(f"- {p['arxiv']}（{p['note']}）" for p in KNOWN_LITERATURE)
+PROMPT = (f"审这条 claim：'{CLAIM}'。\n"
+          f"已知文献起点：\n{lit_text}\n"
+          f"用 search_arxiv 检索 DRO/redundant constraints 相关文献，按协议输出。")
 
 def run():
     result = agent.invoke({"messages": [("user", PROMPT)]})
